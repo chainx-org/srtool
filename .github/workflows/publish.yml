@@ -12,8 +12,8 @@ jobs:
         name: Checkout code.
 
       - name: a
-        run:
-          - echo ${GITHUB_REF##*/}
+        run: |
+          echo ${GITHUB_REF##*/}
 
       # - uses: mr-smithers-excellent/docker-build-push@v4
       #   name: Build & push docker image.
