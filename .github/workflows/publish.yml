@@ -1,6 +1,8 @@
 name: Pushlish build tools.
 
-on: [push]
+on:
+  push:
+    tags:
 
 jobs:
   build:
@@ -13,7 +15,7 @@ jobs:
         name: Build & push docker image.
         with:
           image: chainxorg/srtool
-          tag: ${{secrets.DOCKER_TAG}}
+          tag: ${GITHUB_REF##*/}
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
