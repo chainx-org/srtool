@@ -1,6 +1,8 @@
 # `chainxorg/srtool`
 
-This repo is originally forked from [paritytech/srtool](https://github.com/paritytech/srtool), but now it compiles and push the image to the Docker Hub automatically using GitHub Action according to the instruction [build-the-docker-image](https://github.com/paritytech/srtool#7-build-the-docker-image).
+This repo is created for building the Docker image `chainxorg/srtool`. You can find it at https://hub.docker.com/r/chainxorg/srtool.
+
+It's originally forked from [paritytech/srtool](https://github.com/paritytech/srtool), but now it compiles and push the image to the Docker Hub automatically using GitHub Action according to the instruction [build-the-docker-image](https://github.com/paritytech/srtool#7-build-the-docker-image).
 
 ## Related sources
 
