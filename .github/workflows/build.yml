@@ -2,9 +2,6 @@ name: Build chainxorg/srtool
 
 on:
   [push, pull_request]
-  # push:
-    # branches:
-      # - release
 
 jobs:
   build:
