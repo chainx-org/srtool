@@ -6,12 +6,13 @@ on:
     # branches:
       # - release
 
-env:
-  RUSTC_VERSION=nightly-2021-03-01
-
 jobs:
   build:
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        toolchain: [nightly-2021-03-01]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.2
@@ -26,7 +27,7 @@ jobs:
         run: |
           git clone https://gitlab.com/chevdor/srtool --depth=1
           cd srtool
-          docker build --build-arg RUSTC_VERSION=$RUSTC_VERSION -t chainxorg/srtool:$RUSTC_VERSION .
+          docker build --build-arg RUSTC_VERSION=${{ matrix.toolchain }} -t chainxorg/srtool:${{ matrix.toolchain }} .
 
       - name: Push the image to Docker Hub
-        run: docker push chainxorg/srtool:$RUSTC_VERSION
+        run: docker push chainxorg/srtool:${{ matrix.toolchain }}
