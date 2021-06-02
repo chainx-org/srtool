@@ -20,12 +20,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build the Docker image
+      - name: Build and push the Docker image
         run: |
           git clone https://gitlab.com/chevdor/srtool --depth=1
           cd srtool
           export RUSTC_VERSION=nightly-2021-03-01
           docker build --build-arg RUSTC_VERSION=$RUSTC_VERSION -t chainxorg/srtool:$RUSTC_VERSION .
-
-      - name: Push the image to Docker Hub
-        run: docker push chainxorg/srtool:nightly-2021-03-01
+          docker push chainxorg/srtool:$RUSTC_VERSION
