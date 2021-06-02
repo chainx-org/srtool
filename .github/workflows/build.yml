@@ -23,4 +23,4 @@ jobs:
           cd srtool
           export RUSTC_VERSION=nightly-2021-03-01
           docker build --build-arg RUSTC_VERSION=$RUSTC_VERSION -t chainxorg/srtool:$RUSTC_VERSION .
-          ## docker push chainxorg/srtool:$RUSTC_VERSION
+          ### docker push chainxorg/srtool:$RUSTC_VERSION
