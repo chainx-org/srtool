@@ -1,7 +1,7 @@
-name: Build chainxorg/srtool image
+name: Build chainxorg/srtool
 
 on:
-  [push]
+  [push, pull_request]
   # push:
     # branches:
       # - release
